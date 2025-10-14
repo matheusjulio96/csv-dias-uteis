@@ -1,23 +1,24 @@
 <script>
+    let ano = 2025;
 
     //mes comeca em 0
     var feriados =
         [
-            new Date(2025, 1 - 1, 1),//
-            new Date(2025, 3 - 1, 3),//
-            new Date(2025, 3 - 1, 4),//
-            new Date(2025, 4 - 1, 18),//
-            new Date(2025, 4 - 1, 21),//
-            new Date(2025, 5 - 1, 1),//
-            new Date(2025, 6 - 1, 19),//
-            new Date(2025, 9 - 1, 7),//
-            new Date(2025, 10 - 1, 12),//
-            new Date(2025, 11 - 1, 2),//
-            new Date(2025, 11 - 1, 15),//
-            new Date(2025, 11 - 1, 20),//
-            new Date(2025, 12 - 1, 24),//
-            new Date(2025, 12 - 1, 25),//
-            new Date(2025, 12 - 1, 31),//
+            new Date(ano, 1 - 1, 1),//
+            new Date(ano, 3 - 1, 3),//
+            new Date(ano, 3 - 1, 4),//
+            new Date(ano, 4 - 1, 18),//
+            new Date(ano, 4 - 1, 21),//
+            new Date(ano, 5 - 1, 1),//
+            new Date(ano, 6 - 1, 19),//
+            new Date(ano, 9 - 1, 7),//
+            new Date(ano, 10 - 1, 12),//
+            new Date(ano, 11 - 1, 2),//
+            new Date(ano, 11 - 1, 15),//
+            new Date(ano, 11 - 1, 20),//
+            new Date(ano, 12 - 1, 24),//
+            new Date(ano, 12 - 1, 25),//
+            new Date(ano, 12 - 1, 31),//
         ];
 
     function downloadCSV(csvContent) {
@@ -34,7 +35,7 @@
     async function process() {
         let csvContent = "";
 
-        var date = new Date(2025, 1 - 1, 1);
+        var date = new Date(ano, 1 - 1, 1);
         for (let i = 1; i < 367; i++) {
             if (!feriados.includes(date) && (date.getDay() != 0 && date.getDay() != 6))
                 csvContent += date.toLocaleDateString('pt-br') + "\r\n";
